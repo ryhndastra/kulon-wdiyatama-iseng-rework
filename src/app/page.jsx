@@ -15,11 +15,9 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Pake setTimeout biar gak dianggap synchronous update sama React (Ilengin Error Merah)
     const timer = setTimeout(() => {
       setMounted(true);
       
-      // Cek Dark Mode
       const isDark = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
       setDarkMode(isDark);
       if (isDark) document.documentElement.classList.add('dark');
@@ -40,7 +38,6 @@ export default function Home() {
     }
   };
 
-  // Render Loading State polos biar gak flicker
   if (!mounted) {
     return <div className="min-h-screen bg-slate-50 dark:bg-slate-950"></div>;
   }
@@ -56,7 +53,6 @@ export default function Home() {
 
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
       
-      {/* Wrapper ID buat Scroll Spy Dashboard */}
       <div id="dashboard">
          <Hero darkMode={darkMode} />
          <StatsOverview darkMode={darkMode} />
@@ -64,7 +60,6 @@ export default function Home() {
 
       <main className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
         <div className="lg:col-span-8 space-y-10">
-           {/* Kasih scroll-mt (Margin Top) biar pas di-klik gak ketutupan Navbar */}
            <div id="jadwal" className="scroll-mt-28">
               <ScheduleWidget darkMode={darkMode} />
            </div>
