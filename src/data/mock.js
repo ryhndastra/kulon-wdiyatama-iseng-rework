@@ -44,3 +44,21 @@ export const recentActivities = [
   { user: "Sistem", action: "memperbarui nilai", target: "UTS Riset Operasi", time: "1j lalu", icon: TrendingUp, color: "bg-green-100 text-green-600" },
   { user: "Bu Susi", action: "membuat tugas", target: "Laporan Praktikum", time: "3j lalu", icon: AlertCircle, color: "bg-orange-100 text-orange-600" },
 ];
+
+export const classContents = {
+  "c1": { 
+    description: "Mata kuliah ini membahas framework modern JavaScript (Next.js) dan manajemen state global.",
+    meetings: [
+      { id: 1, title: "Pengenalan Next.js 14", date: "7 Feb", type: "Materi", file: "Slide-Intro.pdf", isDone: true },
+      { id: 2, title: "Routing & Layouts", date: "14 Feb", type: "Praktek", file: "Modul-Lab-2.pdf", isDone: false },
+      { id: 3, title: "Server Components", date: "21 Feb", type: "Tugas", file: null, deadline: "27 Feb", isDone: false },
+    ]
+  },
+  "c2": { 
+    description: "Konsep dasar kecerdasan buatan, Machine Learning, dan implementasi algoritma pencarian.",
+    meetings: [
+      { id: 1, title: "Konsep Dasar AI", date: "8 Feb", type: "Materi", file: "AI-Basic.pdf", isDone: true },
+      { id: 2, title: "Fuzzy Logic", date: "15 Feb", type: "Materi", file: "Fuzzy-Logic.pdf", isDone: true },
+    ]
+  }
+};
